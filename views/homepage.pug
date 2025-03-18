@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1 Pet Records
+    table(border="1")
+      thead
+        tr
+          th ID
+          th Name
+          th Animal Species
+          th Breed
+          th Pet Owner
+      tbody
+        each pet in customObjects
+          tr
+            td= pet.properties.id
+            td= pet.properties.name
+            td= pet.properties.animal_species
+            td= pet.properties.breed
+            td= pet.properties.pet_owner
+    a(href="/update-cobj") Add a new pet record

@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1= pet ? "Edit Pet Record" : "Add a New Pet Record"
+    form(action="/update-cobj" method="POST")
+      label(for="id") ID:
+      input(type="text" id="id" name="id" value=pet ? pet.properties.id : "" required readonly=pet) 
+      br
+      label(for="name") Name:
+      input(type="text" id="name" name="name" value=pet ? pet.properties.name : "" required)
+      br
+      label(for="animal_species") Animal Species:
+      input(type="text" id="animal_species" name="animal_species" value=pet ? pet.properties.animal_species : "" )
+      br
+      label(for="breed") Breed:
+      input(type="text" id="breed" name="breed" value=pet ? pet.properties.breed : "" )
+      br
+      label(for="pet_owner") Pet Owner:
+      input(type="text" id="pet_owner" name="pet_owner" value=pet ? pet.properties.pet_owner : "" )
+      br
+      button(type="submit") Submit
+    br
+    a(href="/") Return to the homepage
